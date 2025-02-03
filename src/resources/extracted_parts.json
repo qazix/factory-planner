@@ -1,0 +1,10 @@
+[ 	
+	{	
+		"id": "iron_ore",
+		"name": "Iron Ore"
+	},
+	{
+		"id": "copper_ore",
+		"name": "Copper Ore"
+	}
+]
