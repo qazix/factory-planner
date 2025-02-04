@@ -1,6 +1,8 @@
 <label for="part-picker">Select a Part </label>
-<select name="part-picker" id="part-picker" [formControl]="partPicker">
-  <option *ngfor="let p of parts" value=p.id>
-  	{{p.name}}
-  </option>
+<select name="part-picker" id="part-picker">
+  @if (parts$ | async; as parts) {
+    @for (part of parts; track part.id) {
+      <option value={{part.id}}>{{part.name}}</option>
+    }
+  }
 </select>

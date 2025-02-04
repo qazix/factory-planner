@@ -1,23 +1,25 @@
 import { Component } from '@angular/core';
 import { Part } from '../classes/part.component'
-import { 
-  FormBuilder, 
-  FormGroup, 
-  FormArray, 
-  FormControl, 
-  ValidatorFn 
-} from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-part-picker',
-  imports: [],
+  standalone: true,
+  imports: [AsyncPipe],
   templateUrl: './part-picker.component.html',
   styleUrl: './part-picker.component.css'
 })
 export class PartPickerComponent {
-  partPicker: new FormControl();
-  parts: new [
-      new Part("iron_ore", "Iron Ore"),
-      new Part("copper_ore", "Copper Ore")
-    ];
+  private URL = '/assets/extracted_parts.json';
+  parts$!: Observable<any>;
+
+  constructor(private client: HttpClient) {
+    this.parts$ = this.client.get(this.URL);
+  }
+
+  ngOnInit() {
+    console.log('Parts', this.parts$);
+  } 
 }
