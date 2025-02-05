@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Part } from '../classes/part.component'
+import { PartService } from '../part.service'
 import { HttpClient } from '@angular/common/http';
 import { AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
@@ -12,11 +13,12 @@ import { Observable } from 'rxjs';
   styleUrl: './part-picker.component.css'
 })
 export class PartPickerComponent {
-  private URL = '/assets/extracted_parts.json';
-  parts$!: Observable<any>;
+  private URL = '/assets/manufactured_parts.json';
+  parts$!: Observable<Part[]>;
 
-  constructor(private client: HttpClient) {
-    this.parts$ = this.client.get(this.URL);
+  constructor(private partService: PartService, 
+    private client: HttpClient) {
+    this.parts$ = this.partService.getParts(this.URL);
   }
 
   ngOnInit() {

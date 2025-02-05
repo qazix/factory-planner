@@ -1,0 +1,42 @@
+[
+	{
+		"id": "iron_ingot",
+		"name": "Iron ingot",
+		"recipe": [
+			{ "building": "smelter",
+				"input": [
+					{	"id": "iron_ore",
+						"rate": 30 }],
+				"output": [
+					{	"id": "iron_ingot",
+						"rate": 30 }]},
+			{	"building": "refinery",
+				"input": [
+					{	"id": "iron_ore",
+						"rate": 35 },
+					{	"id": "water",
+						"rate": 20 }],
+				"output": [
+					{	"id": "iron_ingot",
+						"rate": 65 }]},
+			{ "building": "foundry",
+				"input": [
+					{	"id": "iron_ore",
+						"rate": 40 },
+					{	"id": "copper_ore",
+						"rate": 10 }],
+				"output": [
+					{	"id": "iron_ingot",
+						"rate": 75 }]},
+			{ "building": "foundry",
+				"input": [
+					{	"id": "iron_ore",
+						"rate": 25 },
+					{	"id": "limestone",
+						"rate": 40 }],
+				"output": [
+					{	"id": "iron_ingot",
+						"rate": 50 }]}
+		]
+	}
+]

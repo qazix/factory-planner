@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PartPickerComponent } from './part-picker/part-picker.component';
+import { PartPickerComponent } from './part/part-picker/part-picker.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
 @Component({
